@@ -53,7 +53,11 @@ public class SearchUtils {
    *   values[index] == val
    */
   static int recursiveBinarySearch(int[] vals, int i) throws Exception {
-    return 0;   // STUB
+    int left = 0;
+    int right = vals.length;
+  
+      return rbsHelper(vals, left, right, i);
+
   } // recursiveBinarySearch
 
   /**
@@ -79,7 +83,17 @@ public class SearchUtils {
    *   values[index] == val
    */
   static int rbsHelper(int[] vals, int lb, int ub, int i) throws Exception {
-    return 0;   // STUB
+    if (lb >= ub) {
+      throw new Exception();
+    } 
+    int middle = lb + (ub - lb)/2;
+    if(vals[middle] == i) {
+      return middle;
+    } else if (vals[middle] > i) {
+      return rbsHelper(vals, (middle + 1), ub, i);
+    } else {
+      return rbsHelper(vals, lb, (middle -1) , i);
+    }
   } // rbsHelper
 
   // +----------------+----------------------------------------------
@@ -130,7 +144,13 @@ public class SearchUtils {
    *   values[index] == val
    */
   public static int binarySearch(int[] vals, int i) throws Exception {
-    return 0;
+    return recursiveBinarySearch(vals, i);
+    // int left = 0;
+    // int right = vals.length;
+    // int middle;
+    // while(left <= right) {
+
+    // }
     // return interativeBinarySearch(vals, i);
     // return recursiveBinarySearch(vals, i);
   } // binarySearch
