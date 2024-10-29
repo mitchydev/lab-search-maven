@@ -2,11 +2,8 @@ package edu.grinnell.csc207;
 
 import java.util.Arrays;
 
-import java.util.function.Supplier;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.Test;
 
 import edu.grinnell.csc207.util.SearchUtils;
@@ -103,5 +100,11 @@ public class TestSearch {
     assertBinarySearchFails(new int[] { 7, 11 }, 10);
     assertBinarySearchFails(new int[] { 7, 11 }, 20);
   } // testBinarySearchTwo()
-
-} // class TestSearch
+  
+  @Test
+  void testByStudents() throws Exception {
+    assertBinarySearchFails(new int[] {8, 20}, 7);
+    assertBinarySearchFails(new int[] {8, 20}, 21);
+    assertBinarySearchFinds(0, new int[] { 7, 11 }, 7);
+  } // testBinarySearchOne()
+}
