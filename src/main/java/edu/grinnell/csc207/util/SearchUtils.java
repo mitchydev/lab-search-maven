@@ -33,9 +33,9 @@ public class SearchUtils {
    */
   static int iterativeBinarySearch(int[] vals, int i) throws Exception {
     int lb = 0;
-    int ub = vals.length - 1;
+    int ub = vals.length;
 
-    while (lb <= ub) {
+    while (lb < ub) {
       int middle = lb + (ub - lb) / 2;
 
       if (vals[middle] == i) {
@@ -43,7 +43,7 @@ public class SearchUtils {
       } else if (vals[middle] < i) {
         lb = middle + 1;
       } else {
-        ub = middle - 1;
+        ub = middle;
       } // else
     } // while
     throw new Exception("Value " + i + " not found.");
